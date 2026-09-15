@@ -62,17 +62,19 @@ echo ----------------------------------------------------
 set "temp_chk=%TEMP%\pacgit_chk_ver.bat"
 
 for /d %%D in ("%git-package%\*") do (
-    set "p_name=%%~nD"
+    set "p_name="
     set "p_ver="
     set "p_auth="
     
     if exist "%%D\info.txt" (
         for /f "tokens=1,* delims=: " %%A in ('type "%%D\info.txt"') do (
+            if /i "%%A" == "Name" set "p_name=%%B"
             if /i "%%A" == "Version" set "p_ver=%%B"
             if /i "%%A" == "Author"  set "p_auth=%%B"
         )
     )
-    
+
+if not "p_name" == "" (
     if not "!p_auth!" == "" (
         if not "!p_ver!" == "" (
             if exist "%temp_chk%" del "%temp_chk%"
