@@ -6,7 +6,7 @@ echo If you remove pacgit, all packages downloaded via it will also be removed.
 echo Package pacgit [~8,00 KB]
 echo Folder .github-packages [?]
 set "password="
-set /p password="Remove these package? [Y^/n]: "
+set /p password="Remove these package? [Y/n]: "
 if /i "password"="y" goto delete
 if /i "password"="n" goto cancel
 
