@@ -24,7 +24,7 @@ if %errorlevel% neq 0 (
     )
 )
 
-curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacgit-dat.bat" -o "%userprofile%\.github-packages\pacgit\pacgit.bat"
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacgit.dat" -o "%userprofile%\.github-packages\pacgit\pacgit.bat"
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/info.txt" -o "%userprofile%\.github-packages\pacgit\info.txt"
 
 echo.
