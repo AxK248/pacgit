@@ -5,17 +5,21 @@ chcp 65001 >nul
 setlocal enabledelayedexpansion
 
 echo %userprofile%^> pacgit -S AxK248 pacgit
-
+:choose
 echo pacgit v2.1 package [~8,00 KB]
 echo  ^|__ pacgit data package [6,5 KB]
-echo       pacgit command promt [53 B]
-echo       information for github package manager [30 B]
-echo       uninstall command package [611 B]
+echo      ^| pacgit command promt [53 B]
+echo      ^| information for github package manager [30 B]
+echo      ^| uninstall command package [611 B]
 set "password="
 set /p password="Install these package? [Y/n]: "
 if /i "%password%"=="y" goto install
-if /i "%password%"=="n" goto cancel
+if /i "%password%"=="n" echo Cancelling... && exit /b
 
+echo ERROR
+goto choose
+
+:install
 rd /s /q %userprofile%\github-packages\pacgit >nul
 del %userprofile%\appdata\local\microsoft\windowsapps\pacgit.bat >nul
 
