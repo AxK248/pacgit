@@ -3,8 +3,8 @@ setlocal enabledelayedexpansion
 
 :: Check flags
 if "%~1" == "-S"   goto DOWNLOAD_DIRECT
-if "%~1" == "-Sl"  goto LIST_INSTALLED
-if "%~1" == "-Slu" goto CHECK_UPDATES
+if "%~1" == "-Sy"  goto LIST_INSTALLED
+if "%~1" == "-Syu" goto CHECK_UPDATES
 if "%~1" == "-R"   goto REMOVE_PACKAGE
 
 :USAGE
@@ -12,8 +12,8 @@ echo [pacgit] Package Manager for GitHub
 echo ====================================================
 echo Usage:
 echo   pacgit -S [author] [repo name] - Install directly from GitHub
-echo   pacgit -Sl                     - List all installed packages
-echo   pacgit -Slu                    - Check for available updates
+echo   pacgit -Sy                     - List all installed packages
+echo   pacgit -Syu                    - Check for available updates
 echo   pacgit -R [package name]       - Remove an installed package
 echo ====================================================
 pause
