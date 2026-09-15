@@ -21,10 +21,9 @@ exit /b
 
 
 :: ==========================================
-:: LOGIC -Sl (List Installed Packages)
+:: LOGIC -Sy (List Installed Packages)
 :: ==========================================
 :LIST_INSTALLED
-cls
 echo [pacgit] Installed packages:
 echo ----------------------------------------------------
 set "found_any=0"
@@ -55,10 +54,9 @@ exit /b
 
 
 :: ==========================================
-:: LOGIC -Slu (Check Updates via pacgit.bat)
+:: LOGIC -Syu (Check Updates via pacgit.bat)
 :: ==========================================
 :CHECK_UPDATES
-cls
 echo [pacgit] Checking updates for installed packages...
 echo ----------------------------------------------------
 set "temp_chk=%TEMP%\pacgit_chk_ver.bat"
