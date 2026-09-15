@@ -5,10 +5,10 @@ setlocal enabledelayedexpansion
 
 echo %userprofile%^> pacgit -S AxK248 pacgit
 
-mkdir %userprofile%\.github-packages
+mkdir "%userprofile%\.github-packages"
 mkdir "%userprofile%\.github-packages\pacgit"
 
-reg add "HKCU\Environment" /v git-package /t REG_EXPAND_SZ /d "^%%USERPROFILE^%%\.github-packages" /f >nul
+reg add "HKCU\Environment" /v git-package /t REG_EXPAND_SZ /d "^%USERPROFILE^%\.github-packages" /f >nul
 
 for /f "tokens=2*" %%A in ('reg query "HKCU\Environment" /v PATH 2^>nul') do set "user_path=%%B"
 
