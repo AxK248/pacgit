@@ -29,9 +29,6 @@ curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/info.txt" -o "%us
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/unin.txt" -o "%userprofile%\github-packages\pacgit\uninstall.bat"
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/launcher.txt" -o "%userprofile%\github-packages\pacgit\pacgit.bat"
 
-
-mklink /J %userprofile%\github-packages %appdata%\github-packages
-
 echo.
 echo Install complete!
 timeout /t -1
