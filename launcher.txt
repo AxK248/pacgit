@@ -1,1 +1,1 @@
-"%userprofile%\github-packages\pcg.bat" %*
+"%userprofile%\github-packages\pacgit\pacgit.bat" %*
