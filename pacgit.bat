@@ -18,9 +18,9 @@ if "%user_path%"=="" set "user_path="
 echo !user_path! | findstr /i /c:"%%git-package%%" >nul
 if %errorlevel% neq 0 (
     if defined user_path (
-        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "!user_path!;%%git-package%%;%%userproile%%\.github-packages\pacgit" /f >nul
+        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "!user_path!;%%git-package%%;%%git-package%%\pacgit" /f >nul
     ) else (
-        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "%%git-package%%;%%userprofile%%\.github-packages\pacgit" /f >nul
+        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "%%git-package%%;%%git-package%%\pacgit" /f >nul
     )
 )
 
