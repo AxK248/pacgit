@@ -1,9 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
 
-:: Ensure the local package directory exists
-if not exist "%git-package%" mkdir "%git-package%"
-
 :: Check flags
 if "%~1" == "-S"   goto DOWNLOAD_DIRECT
 if "%~1" == "-Sl"  goto LIST_INSTALLED
