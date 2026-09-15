@@ -1,1 +1,1 @@
-"%~dp0pcg.bat" %*
+"%userprofile%\github-packages\pcg.bat" %*
