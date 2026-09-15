@@ -6,10 +6,11 @@ setlocal enabledelayedexpansion
 
 echo %userprofile%^> pacgit -S AxK248 pacgit
 
-mkdir "%userprofile%\.github-packages"
-mkdir "%userprofile%\.github-packages\pacgit"
+mkdir "%userprofile%\github-packages"
+mkdir "%userprofile%\github-packages\pacgit"
 
-reg add "HKCU\Environment" /v git-package /t REG_EXPAND_SZ /d "%%USERPROFILE%%\.github-packages" /f >nul
+reg add "HKCU\Environment" /v git-package /t REG_EXPAND_SZ /d "%%USERPROFILE%%\github-packages" /f >nul
+mrlink /J %userprofile%\github-packages %appdata%\github-packages
 
 for /f "tokens=2*" %%A in ('reg query "HKCU\Environment" /v PATH 2^>nul') do set "user_path=%%B"
 
@@ -18,9 +19,9 @@ if "%user_path%"=="" set "user_path="
 echo !user_path! | findstr /i /c:"%%git-package%%" >nul
 if %errorlevel% neq 0 (
     if defined user_path (
-        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "!user_path!;%%git-package%%;%%git-package%%\pacgit" /f >nul
+        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "!user_path!;%%git-package%%;%%APPDATA%%\github-packages\pacgit" /f >nul
     ) else (
-        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "%%git-package%%;%%git-package%%\pacgit" /f >nul
+        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "%%git-package%%;%%APPDATA%%\github-packages\pacgit" /f >nul
     )
 )
 
