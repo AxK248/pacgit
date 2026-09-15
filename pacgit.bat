@@ -1,6 +1,7 @@
 :: Version: 1.0
 :: pacwin installer for windows
 :: Start a installer
+@echo off
 setlocal enabledelayedexpansion
 echo %userprofile%^> pacgit -S axk248 pacgit
 mkdir %userprofile%\.github-packages
