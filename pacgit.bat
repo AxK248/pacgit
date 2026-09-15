@@ -5,7 +5,7 @@ setlocal enabledelayedexpansion
 echo %userprofile%^> pacwin -S axk248 pacwin
 mkdir %userprofile%/.github_packages
 :: 1. Search current PATH in HKCU
-We're looking to see if our folder is already there (We are looking specifically for the text %USERPROFILE%\.github-packages and %git-package% with %pacgit%)
+:: We're looking to see if our folder is already there (We are looking specifically for the text %USERPROFILE%\.github-packages and %git-package% with %pacgit%)
 for /f "tokens=2*" %%a in ('reg query "HKCU\Environment" /v PATH 2^>nul') do (
     set "user_path=%%b"
 )
