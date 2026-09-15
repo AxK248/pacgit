@@ -1,6 +1,5 @@
 @echo off
 setlocal enabledelayedexpansion
-title PACGIT - Arch Style Manager for GitHub User Repository
 
 :: Ensure the local package directory exists
 if not exist "%git-package%" mkdir "%git-package%"
