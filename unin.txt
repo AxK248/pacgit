@@ -7,7 +7,7 @@ echo Package pacgit [~8,00 KB]
 echo Folder .github-packages [?]
 set "password="
 set /p password="Remove these package? [Y/n]: "
-if /i "password"="Y" goto delete
+if /i "password"="y" goto delete
 if /i "password"="n" goto cancel
 
 :cacnel
