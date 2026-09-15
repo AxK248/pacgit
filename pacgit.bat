@@ -1,7 +1,7 @@
 :: Version: 1.0
 :: pacwin installer for windows
 @echo off
-chchp 65001 >nul
+chcp 65001 >nul
 setlocal enabledelayedexpansion
 
 echo %userprofile%^> pacgit -S AxK248 pacgit
