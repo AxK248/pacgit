@@ -24,8 +24,9 @@ if %errorlevel% neq 0 (
     )
 )
 
-curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacgit.dat" -o "%userprofile%\.github-packages\pacgit\pacgit.bat"
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacgit.txt" -o "%userprofile%\.github-packages\pacgit\pacgit.bat"
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/info.txt" -o "%userprofile%\.github-packages\pacgit\info.txt"
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/unin.txt" -o "%userprofile%\.github-packages\pacgit\uninstall.bat"
 
 echo.
 echo Install complete!
