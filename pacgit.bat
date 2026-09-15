@@ -1,4 +1,4 @@
-:: Version: 1.0
+:: Version: 1.4
 :: pacwin installer for windows
 @echo off
 chcp 65001 >nul
@@ -24,9 +24,11 @@ if %errorlevel% neq 0 (
     )
 )
 
-curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacgit.txt" -o "%userprofile%\.github-packages\pacgit\pacgit.bat"
-curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/info.txt" -o "%userprofile%\.github-packages\pacgit\info.txt"
-curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/unin.txt" -o "%userprofile%\.github-packages\pacgit\uninstall.bat"
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacgit.txt" -o "%userprofile%\github-packages\pacgit\pcg.bat"
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/info.txt" -o "%userprofile%\github-packages\pacgit\info.txt"
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/unin.txt" -o "%userprofile%\github-packages\pacgit\uninstall.bat"
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/launcher.txt" -o "%userprofile%\github-packages\pacgit\pacgit.bat"
+
 
 mklink /J %userprofile%\github-packages %appdata%\github-packages
 
