@@ -1,4 +1,5 @@
 :: Version: 1.0
+@echo off
 :: pacwin installer for windows
 :: Start a installer
 setlocal enabledelayedexpansion
@@ -24,3 +25,4 @@ echo %userprofile%\.github_package\pacgit^> echo Install complate
 echo Install complate
 timeout /t -1
 exit /b
+@echo on
