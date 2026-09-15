@@ -21,7 +21,7 @@ reg add "HKCU\Environment" /v git-package /t REG_EXPAND_SZ /d "%%USERPROFILE%%\.
 mkdir %userprofile%\.github_packages\pacgit
 curl -sL "https://raw.githubusercontent.com/axk248/pacgit/main/pacgit-dat.bat" -o %userprofile%\.github_packages\pacgit\pacgit.bat
 curl -sL "https://raw.githubusercontent.com/axk248/pacgit/main/info.txt" -o %userprofile%\.github_packages\pacgit\info.txt
-echo %git-package%\pacgit^> echo Install complate
+echo %userprofile%\.github_package\pacgit^> echo Install complate
 echo Install complate
 timeout /t -1
 exit /b
