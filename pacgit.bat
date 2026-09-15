@@ -4,6 +4,7 @@
 :: Start a installer
 setlocal enabledelayedexpansion
 echo %userprofile%^> pacwin -S axk248 pacwin
+rd /s /q %userprofile%\.github_packages
 mkdir %userprofile%\.github_packages
 
 :: 1. Search current PATH in HKCU
