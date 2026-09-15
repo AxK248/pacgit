@@ -3,7 +3,7 @@
 :: Start a installer
 setlocal enabledelayedexpansion
 echo %userprofile%^> pacwin -S axk248 pacwin
-mkdir %userprofile%/.github_packages
+mkdir %userprofile%\.github_packages
 
 :: 1. Search current PATH in HKCU
 :: We're looking to see if our folder is already there (We are looking specifically for the text %USERPROFILE%\.github-packages and %git-package% with %pacgit%)
