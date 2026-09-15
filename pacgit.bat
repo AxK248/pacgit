@@ -10,7 +10,7 @@ mkdir "%userprofile%\github-packages"
 mkdir "%userprofile%\github-packages\pacgit"
 
 reg add "HKCU\Environment" /v git-package /t REG_EXPAND_SZ /d "%%USERPROFILE%%\github-packages" /f >nul
-mrlink /J %userprofile%\github-packages %appdata%\github-packages
+mklink /J %userprofile%\github-packages %appdata%\github-packages
 
 for /f "tokens=2*" %%A in ('reg query "HKCU\Environment" /v PATH 2^>nul') do set "user_path=%%B"
 
