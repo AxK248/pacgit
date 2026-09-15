@@ -1,4 +1,4 @@
-# pacwin
+# pacgit
 GitHub User Repository Installer
 
 ### Installing:
