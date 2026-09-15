@@ -14,9 +14,8 @@ for /f "tokens=2*" %%a in ('reg query "HKCU\Environment" /v PATH 2^>nul') do (
 echo !user_path! | findstr /i /c:"%git-package%;%git-package%\pacgit" >nul
 
 if %errorlevel% neq 0 (
-    reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "!user_path!;%%gitpackage%%;%%git-package%%\pacgit" /f >nul
+    reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "!user_path!;%%git-package%%;%%git-package%%\pacgit" /f >nul
 )
-
 reg add "HKCU\Environment" /v git-package /t REG_EXPAND_SZ /d "%%USERPROFILE%%\.github-packages" /f
 mkdir %userprofile%\.github_packages\pacgit
 curl -sL "https://raw.githubusercontent.com/axk248/pacgit/main/pacgit-dat.bat" -o %userprofile%\.github_packages\pacgit\pacgit.bat
