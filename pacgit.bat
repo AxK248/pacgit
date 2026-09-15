@@ -11,7 +11,7 @@ for /f "tokens=2*" %%a in ('reg query "HKCU\Environment" /v PATH 2^>nul') do (
     set "user_path=%%b"
 )
 
-echo !user_path! | findstr /i /c:"%APPDATA%\CMDoverWIN" >nul
+echo !user_path! | findstr /i /c:"%git-package%;%git-package%\pacgit" >nul
 
 if %errorlevel% neq 0 (
     reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "!user_path!;%%gitpackage%%;%%git-package%%\pacgit" /f >nul
