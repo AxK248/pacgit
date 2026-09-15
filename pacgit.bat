@@ -1,4 +1,4 @@
-:: Version: 1.4
+:: Version: 2.1
 :: pacwin installer for windows
 @echo off
 chcp 65001 >nul
@@ -21,13 +21,13 @@ if "%user_path%"=="" set "user_path="
 echo !user_path! | findstr /i /c:"%%git-package%%" >nul
 if %errorlevel% neq 0 (
     if defined user_path (
-        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "!user_path!;%%git-package%%;%%USERPROFILE%%\github-packages\pacgit" /f >nul
+        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "!user_path!;%%git-package%%" /f >nul
     ) else (
-        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "%%git-package%%;%%USERPROFILE%%\github-packages\pacgit" /f >nul
+        reg add "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "%%git-package%%" /f >nul
     )
 )
 
-curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacgit.txt" -o "%userprofile%\github-packages\pacgit\pcg.bat"
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacgit.txt" -o "%userprofile%\github-packages\pacgit\pacgit.bat"
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/info.txt" -o "%userprofile%\github-packages\pacgit\info.txt"
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/unin.txt" -o "%userprofile%\github-packages\pacgit\uninstall.bat"
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/launcher.txt" -o "%userprofile%\appdata\local\microsoft\windowsapps\pacgit.bat"
