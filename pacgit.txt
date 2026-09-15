@@ -74,7 +74,7 @@ for /d %%D in ("%git-package%\*") do (
         )
     )
 
-if not "p_name" == "" (
+if not "!p_name!" == "" (
     if not "!p_auth!" == "" (
         if not "!p_ver!" == "" (
             if exist "%temp_chk%" del "%temp_chk%"
@@ -104,6 +104,7 @@ if not "p_name" == "" (
             )
         )
     )
+)
 )
 echo ----------------------------------------------------
 pause
@@ -177,8 +178,8 @@ set "git-package-default=%git-package%\%target_pkg%"
 
 :: We look for the version directly in the author's downloaded batch file before installation
 set "extracted_ver=1.0"
-for /f "tokens=1,2,3 delims=: " %%X in ('type "%temp_installer%"') do (
-    if /i "%%Y" == "Version" set "extracted_ver=%%Z"
+for /f "tokens=2 delims=: " %%X in ('type "%temp_installer%" ^| findstr /I "Version:"') do (
+    set "extracted_ver=%%X"
 )
 
 echo [pacgit] Starting installation for "%target_pkg%" [v%extracted_ver%]...
