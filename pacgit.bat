@@ -1,17 +1,6 @@
-@echo off
 :: Version: 2.1
 :: pacwin installer for windows
-if "%~1" == "win" goto installer
-
-curl -sL "https://raw.github.com/AxK248/pacgit/main/pacgit.bat" -o "%TEMP%\install.bat" >nul
-call "%TEMP%\install.bat" win | cmd
-del "%TEMP%\install.bat" >nul
-exit /b
-
-:installer
-chcp 65001 >nul
-setlocal enabledelayedexpansion
-
+@echo off
 echo %userprofile%^> pacgit -S AxK248 pacgit
 :choose
 echo pacgit v2.1 package
