@@ -25,11 +25,11 @@ del %userprofile%\appdata\local\microsoft\windowsapps\pacgit.bat >nul
 
 mkdir "%userprofile%\github-packages" >nul
 mkdir "%userprofile%\github-packages\pacgit" >nul
-::
+:: pacgit command promt
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/pacgit.bat" -o "%userprofile%\github-packages\pacgit\pacgit.bat" >nul
-:: 
+:: information
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/info.txt" -o "%userprofile%\github-packages\pacgit\info.txt" >nul
-:: 
+:: Uninstall command
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/uninstall.bat" -o "%userprofile%\github-packages\pacgit\uninstall.bat" >nul
 :: Shortcut for cmd
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/pacgit.lnk" -o "%userprofile%\appdata\local\microsoft\windowsapps\pacgit.bat" >nul
