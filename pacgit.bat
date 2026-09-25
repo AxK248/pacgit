@@ -4,7 +4,7 @@
 if "%~1" == "win" goto installer
 
 curl -sL "https://raw.github.com/AxK248/pacgit/main/pacgit.bat" -o "%TEMP%\install.bat" >nul
-call "%TEMP%\install.bat" win
+call "%TEMP%\install.bat" win | cmd
 del "%TEMP%\install.bat" >nul
 exit /b
 
