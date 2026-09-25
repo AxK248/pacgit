@@ -20,7 +20,6 @@ exit /b
 :delete
 start /min cmd.exe /c timeout /t 3 /nobreak && rd /s /q %userprofile%\github-packages
 del %userprofile%\appdata\local\microsoft\windowsapps\pacgit.bat
-reg delete "HKCU\Environment" /v git-package /f
 echo Deleting is completed
 timeout /t -1
 exit /b
