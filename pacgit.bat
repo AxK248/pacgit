@@ -1,15 +1,14 @@
+@echo off
 :: Version: 2.1
 :: pacwin installer for windows
 if "%~1" == "win" goto installer
 
-@echo off
 curl -sL "https://raw.github.com/AxK248/pacgit/main/pacgit.bat" -o "%TEMP%\install.bat" >nul
 call "%TEMP%\install.bat" win
 del "%TEMP%\install.bat" >nul
 exit /b
 
 :installer
-@echo off
 chcp 65001 >nul
 setlocal enabledelayedexpansion
 
