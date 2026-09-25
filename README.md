@@ -1,8 +1,13 @@
 # pacgit
 GitHub User Repository Installer
 
-### Installing:
+## Installing pacgit:
 
-```command promt
+### Windows
+```pacwin | cmd
 curl -f -s -L "https://raw.githubusercontent.com/axk248/pacgit/main/pacgit.bat" | cmd
+```
+### Linux / Android
+```paclin | bash
+in progress...
 ```
