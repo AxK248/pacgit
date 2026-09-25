@@ -6,11 +6,11 @@ setlocal enabledelayedexpansion
 
 echo %userprofile%^> pacgit -S AxK248 pacgit
 :choose
-echo pacgit v2.1 package [~8,00 KB]
-echo  ^|__ pacgit data package [6,5 KB]
-echo      ^| pacgit command promt [53 B]
-echo      ^| information for github package manager [30 B]
-echo      ^| uninstall command package [611 B]
+echo pacgit v2.1 package
+echo  ^|__ pacgit data package [7,24 KB]
+echo      ^| pacgit command promt package [6,59 KB]
+echo      ^| shortcut for cmd package [71 B]
+echo      ^| uninstall command package [592 B]
 set "password="
 set /p password="Install these package? [Y/n]: "
 if /i "%password%"=="y" goto install
@@ -25,10 +25,13 @@ del %userprofile%\appdata\local\microsoft\windowsapps\pacgit.bat >nul
 
 mkdir "%userprofile%\github-packages" >nul
 mkdir "%userprofile%\github-packages\pacgit" >nul
-
+::
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/pacgit.bat" -o "%userprofile%\github-packages\pacgit\pacgit.bat" >nul
+:: 
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/info.txt" -o "%userprofile%\github-packages\pacgit\info.txt" >nul
+:: 
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/uninstall.bat" -o "%userprofile%\github-packages\pacgit\uninstall.bat" >nul
+:: Shortcut for cmd
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/pacgit.lnk" -o "%userprofile%\appdata\local\microsoft\windowsapps\pacgit.bat" >nul
 
 echo.
