@@ -1,0 +1,3 @@
+@echo off
+"%userprofile%\github-packages\pacgit\pacgit.bat" %*
+@echo on
