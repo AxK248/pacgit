@@ -10,6 +10,9 @@ set /p password="Remove these package? [Y/n]: "
 if /i "%password%"=="y" goto delete
 if /i "%password%"=="n" goto cancel
 
+echo Unknown choose
+exit /b
+
 :cacnel
 echo Cancellation...
 exit /b
