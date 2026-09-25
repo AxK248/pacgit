@@ -16,8 +16,8 @@ set /p password="Install these package? [Y/n]: "
 if /i "%password%"=="y" goto install
 if /i "%password%"=="n" echo Cancelling... && exit /b
 
-echo ERROR
-goto choose
+echo Default Y... Press enter to continue
+timeout /t -1 >nul 
 
 :install
 rd /s /q %userprofile%\github-packages\pacgit >nul
