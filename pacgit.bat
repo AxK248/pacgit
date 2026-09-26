@@ -1,7 +1,6 @@
 :: Version: 2.6
 :: pacwin installer for windows
 @echo off
-chcp 65001
 echo pacgit v2.6 package
 echo  ^|__ pacgit data package [7,24 KB]
 echo      ^| pacgit command promt package [6,59 KB]
