@@ -18,8 +18,7 @@ echo Cancellation...
 exit /b
 
 :delete
-start /min cmd.exe /c timeout /t 3 /nobreak && rd /s /q %userprofile%\github-packages
-del %userprofile%\appdata\local\microsoft\windowsapps\pacgit.bat
+start /min cmd.exe /c timeout /t 3 /nobreak && rd /s /q "%ProgramData%\github-packages"
+del "%windir%\pacgit.bat"
+del "%windir%\gsudo.exe"
 echo Deleting is completed
-timeout /t -1
-exit /b
