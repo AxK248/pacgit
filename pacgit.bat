@@ -15,23 +15,23 @@ echo Default Y... Press enter to continue
 timeout /t -1 >nul 
 
 :install
-rd /s /q %userprofile%\github-packages\pacgit 2>nul
-del %userprofile%\appdata\local\microsoft\windowsapps\pacgit.bat 2>nul
+rd /s /q %LocalAppData%\github-packages\pacgit 2>nul
+del %LocalAppData%\Microsoft\WindowsApps\pacgit.bat 2>nul
 
-mkdir "%userprofile%\github-packages" >nul
-mkdir "%userprofile%\github-packages\pacgit" >nul
+mkdir "%LocalAppData%\Programs\github-packages" >nul
+mkdir "%LocalAppData%\Programs\github-packages\pacgit" >nul
 
 echo Downloading packages
 :: pacgit command promt
-curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/pacgit.bat" -o "%userprofile%\github-packages\pacgit\pacgit.bat" >nul
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/pacgit.bat" -o "%LocalAppData%\Programs\github-packages\pacgit\pacgit.bat" >nul
 echo pacgit command promt. Done.
 :: information
-curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/info.txt" -o "%userprofile%\github-packages\pacgit\info.txt" >nul
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/info.txt" -o "%LocalAppData%\Programs\github-packages\pacgit\info.txt" >nul
 :: Uninstall command
-curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/uninstall.bat" -o "%userprofile%\github-packages\pacgit\uninstall.bat" >nul
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/uninstall.bat" -o "%LocalAppData%\Programs\github-packages\pacgit\uninstall.bat" >nul
 echo Creating uninstalling batch. Done.
 :: Shortcut for cmd
-curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/pacgit.lnk" -o "%userprofile%\appdata\local\microsoft\windowsapps\pacgit.bat" >nul
+curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/windows/pacgit.lnk" -o "%LocalAppData%\Microsoft\WindowsApps\pacgit.bat" >nul
 echo Creating shortcut for cmd. Done.
 
 echo.
