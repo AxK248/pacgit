@@ -3,7 +3,7 @@
 chcp 65001
 
 echo If you remove pacgit, all packages downloaded via it will also be removed.
-echo Package pacgit [~8,00 KB]
+echo Package pacgit [7,24 KB]
 echo Folder .github-packages [?]
 set "password="
 set /p password="Remove these package? [Y/n]: "
