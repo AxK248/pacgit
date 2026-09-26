@@ -2,11 +2,11 @@
 setlocal enabledelayedexpansion
 
 :: Check flags
+if "%~1" == "help" goto USAGE
 if "%~1" == "-S"   goto DOWNLOAD_DIRECT
 if "%~1" == "-Sy"  goto LIST_INSTALLED
 if "%~1" == "-Syu" goto CHECK_UPDATES
 if "%~1" == "-R"   goto REMOVE_PACKAGE
-if "%~1" == "help" goto USAGE
 
 echo Unknown flag "%~1", please enter flag "help" for more information.
 exit /b
@@ -25,8 +25,8 @@ exit /b
 :: LOGIC -Sy (List Installed Packages)
 :: ==========================================
 :LIST_INSTALLED
-echo [pacgit] Installed packages:
-echo ----------------------------------------------------
+echo pacgit^> Installed packages:
+echo.
 set "found_any=0"
 
 for /d %%D in ("%userprofile%\git-packages\*") do (
@@ -48,8 +48,8 @@ for /d %%D in ("%userprofile%\git-packages\*") do (
     
     echo  !p_name! [v!p_ver!] by !p_auth!
 )
-if "!found_any!" == "0" echo [pacgit] No packages found.
-echo ----------------------------------------------------
+if "!found_any!" == "0" echo pacgit^> No packages found.
+echo.
 pause
 exit /b
 
@@ -58,8 +58,8 @@ exit /b
 :: LOGIC -Syu (Check Updates via pacgit.bat)
 :: ==========================================
 :CHECK_UPDATES
-echo [pacgit] Checking updates for installed packages...
-echo ----------------------------------------------------
+echo pacgit^> Checking updates for installed packages...
+echo.
 set "temp_chk=%TEMP%\pacgit_chk_ver.bat"
 
 for /d %%D in ("%userprofile%\git-packages\*") do (
@@ -130,7 +130,7 @@ if not exist "%pkg_dir%" (
     exit /b
 )
 
-echo [pacgit] Running uninstall script for %target_pkg%...
+echo pacgit^> Running uninstall script for %target_pkg%...
 echo ----------------------------------------------------
 if exist "%pkg_dir%\uninstall.bat" (
     call "%pkg_dir%\uninstall.bat"
@@ -138,9 +138,9 @@ if exist "%pkg_dir%\uninstall.bat" (
     echo [pacgit] Warning: No uninstall.bat found for this package.
 )
 echo ----------------------------------------------------
-echo [pacgit] Cleaning up package files...
+echo pacgit^> Cleaning up package files...
 rmdir /s /q "%pkg_dir%"
-echo [pacgit] Package "%target_pkg%" successfully removed.
+echo pacgit^> Package "%target_pkg%" successfully removed.
 pause
 exit /b
 
@@ -149,8 +149,8 @@ exit /b
 :: LOGIC -S (Direct Download)
 :: ==========================================
 :DOWNLOAD_DIRECT
-if "%~2" == "" goto USAGE
-if "%~3" == "" goto USAGE
+if "%~2" == ""
+if "%~3" == ""
 set "pkg_author=%~2"
 set "pkg_name=%~3"
 set "target_pkg=%~3"
@@ -160,7 +160,6 @@ goto RUN_INSTALLER_LOGIC
 :: CORE INSTALLATION BLOCK
 :: ==========================================
 :RUN_INSTALLER_LOGIC
-cls
 echo [pacgit] Fetching pacgit.bat from %pkg_author%/%pkg_name%...
 set "temp_installer=%TEMP%\pacgit_install_%pkg_name%.bat"
 
@@ -168,7 +167,7 @@ set "temp_installer=%TEMP%\pacgit_install_%pkg_name%.bat"
 curl -f -s -L "https://raw.githubusercontent.com/%pkg_author%/%pkg_name%/main/pacgit.bat" -o "%temp_installer%"
 
 if %errorlevel% NEQ 0 (
-    echo [pacgit] Error: Project not found.
+    echo pacgit^> Error: Project not found.
     if exist "%temp_installer%" del "%temp_installer%"
     pause
     exit /b
@@ -183,15 +182,10 @@ for /f "tokens=2 delims=: " %%X in ('type "%temp_installer%" ^| findstr /I "Vers
     set "extracted_ver=%%X"
 )
 
-echo [pacgit] Starting installation for "%target_pkg%" [v%extracted_ver%]...
-echo ----------------------------------------------------
-echo.
+echo pacgit^> Starting installation for "%target_pkg%" [v%extracted_ver%]...
 
 :: Run the author's script and pass it the path to its future folder.
 call "%temp_installer%" "%git-package-default%"
-
-echo.
-echo ----------------------------------------------------
 
 :: Create info.txt ONLY if the author did not create it during installation.
 if not exist "%git-package-default%\info.txt" (
@@ -202,7 +196,7 @@ if not exist "%git-package-default%\info.txt" (
     )
 )
 
-echo [pacgit] Installation of %target_pkg% finished!
+echo pacgit^> Installation of %target_pkg% finished!
 if exist "%temp_installer%" del "%temp_installer%"
 pause
 exit /b
