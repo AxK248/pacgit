@@ -29,7 +29,7 @@ echo pacgit^> Installed packages:
 echo.
 set "found_any=0"
 
-for /d %%D in ("%LocalAppData%\Programs\git-packages\*") do (
+for /d %%D in ("%ProgramData%\git-packages\*") do (
     set "found_any=1"
     set "p_name="
     set "p_ver="
@@ -62,7 +62,7 @@ echo pacgit^> Checking updates for installed packages...
 echo.
 set "temp_chk=%TEMP%\pacgit_chk_ver.bat"
 
-for /d %%D in ("%LocalAppData%\Programs\git-packages\*") do (
+for /d %%D in ("%ProgamData%\git-packages\*") do (
     set "p_name="
     set "p_ver="
     set "p_auth="
@@ -122,7 +122,7 @@ if "%~2" == "" (
     exit /b
 )
 set "target_pkg=%~2"
-set "pkg_dir=%LocalAppData%\Programs\git-packages\%target_pkg%"
+set "pkg_dir=%ProgramData%\git-packages\%target_pkg%"
 
 if not exist "%pkg_dir%" (
     echo pacgit^> Error: Package "%target_pkg%" is not installed.
@@ -173,7 +173,7 @@ if %errorlevel% NEQ 0 (
 )
 
 :: Define a path variable for a specific project
-set "git-package-default=%userprofile%\git-packages\%target_pkg%"
+set "git-package-default=%ProgramData%\git-packages\%target_pkg%"
 
 :: We look for the version directly in the author's downloaded batch file before installation
 set "extracted_ver=1.0"
