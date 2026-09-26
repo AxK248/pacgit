@@ -8,7 +8,7 @@ if "%~1" == "-Sy"  goto LIST_INSTALLED
 if "%~1" == "-Syu" goto CHECK_UPDATES
 if "%~1" == "-R"   goto REMOVE_PACKAGE
 
-echo Unknown flag "%~1", please enter flag "help" for more information.
+echo Unknown flag "%~1" in "pacgit %~1", please enter "pacgit help" for more information.
 exit /b
 
 :USAGE
@@ -29,7 +29,7 @@ echo pacgit^> Installed packages:
 echo.
 set "found_any=0"
 
-for /d %%D in ("%userprofile%\git-packages\*") do (
+for /d %%D in ("%LocalAppData%\Programs\git-packages\*") do (
     set "found_any=1"
     set "p_name="
     set "p_ver="
@@ -62,7 +62,7 @@ echo pacgit^> Checking updates for installed packages...
 echo.
 set "temp_chk=%TEMP%\pacgit_chk_ver.bat"
 
-for /d %%D in ("%userprofile%\git-packages\*") do (
+for /d %%D in ("%LocalAppData%\Programs\git-packages\*") do (
     set "p_name="
     set "p_ver="
     set "p_auth="
@@ -107,7 +107,7 @@ if not "!p_name!" == "" (
     )
 )
 )
-echo ----------------------------------------------------
+echo.
 pause
 exit /b
 
@@ -117,15 +117,15 @@ exit /b
 :: ==========================================
 :REMOVE_PACKAGE
 if "%~2" == "" (
-    echo [pacgit] Error: Package name not specified.
+    echo pacgit^> Error: Package name not specified.
     pause
     exit /b
 )
 set "target_pkg=%~2"
-set "pkg_dir=%userprofile%\git-packages\%target_pkg%"
+set "pkg_dir=%LocalAppData%\Programs\git-packages\%target_pkg%"
 
 if not exist "%pkg_dir%" (
-    echo [pacgit] Error: Package "%target_pkg%" is not installed.
+    echo pacgit^> Error: Package "%target_pkg%" is not installed.
     pause
     exit /b
 )
@@ -135,7 +135,7 @@ echo ----------------------------------------------------
 if exist "%pkg_dir%\uninstall.bat" (
     call "%pkg_dir%\uninstall.bat"
 ) else (
-    echo [pacgit] Warning: No uninstall.bat found for this package.
+    echo pacgit^> Warning: No uninstall.bat found for this package.
 )
 echo ----------------------------------------------------
 echo pacgit^> Cleaning up package files...
@@ -149,8 +149,7 @@ exit /b
 :: LOGIC -S (Direct Download)
 :: ==========================================
 :DOWNLOAD_DIRECT
-if "%~2" == ""
-if "%~3" == ""
+if "%~2" == "" echo Unknown flag "%~2" in "pacgit %~1 %~2". please enter "pacgit help" for more information
 set "pkg_author=%~2"
 set "pkg_name=%~3"
 set "target_pkg=%~3"
