@@ -1,3 +1,3 @@
 @echo off
-"%LocalAppData%\Programs\github-packages\pacgit\pacgit.bat" %*
+call "%LocalAppData%\Programs\github-packages\pacgit\pacgit.bat" %*
 @echo on
