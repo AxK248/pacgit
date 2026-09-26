@@ -40,9 +40,7 @@ echo Creating shortcut for cmd — Done.
 curl -sL "https://github.com/gerardog/gsudo/releases/download/v2.6.1/gsudo.portable.zip" -o "%ProgramData%\github-packages\gsudo.zip"
 tar -xf "%ProgramData%\github-packages\gsudo.zip"
 del "%ProgramData%\github-packages\gsudo.zip"
-rmdir /s /q "%ProgramData%\git-packages\arm64"
-rmdir /s /q "%ProgramData%\git-packages\net46-AnyCpu"
-rmdir /s /q "%ProgramData%\git-packages\x86"
+rmdir /s /q "%ProgramData%\git-packages\arm64" "%ProgramData%\git-packages\net46-AnyCpu" "%ProgramData%\git-packages\x86"
 move "%ProgramData%\git-packages\x64\gsudo.exe" "%windir%\gsudo.exe"
 rmdir /s /q "%ProgramData%\git-packages\x64"
 echo Downloading gsudo package — Done.
