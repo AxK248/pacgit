@@ -1,8 +1,6 @@
 :: Version: 2.1
 :: pacwin installer for windows
 @echo off
-echo %userprofile%^> pacgit -S AxK248 pacgit
-:choose
 echo pacgit v2.1 package
 echo  ^|__ pacgit data package [7,24 KB]
 echo      ^| pacgit command promt package [6,59 KB]
