@@ -1,0 +1,2 @@
+@echo off
+"%ProgramData%\git-package\gsudo\gsudo.exe" %*
