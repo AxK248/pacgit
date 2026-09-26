@@ -5,7 +5,7 @@ GitHub User Repository Installer
 
 ### Windows
 ```pacwin | cmd
-curl -f -s -L "https://raw.githubusercontent.com/axk248/pacgit/main/pacgit.bat" | cmd
+curl -sL "https://raw.githubusercontent.com/axk248/pacgit/main/pacgit.bat" -o "%temp%\temp.bat" && call "%temp%\temp.bat" && del "%temp%\temp.bat"
 ```
 ### Linux / Android
 ```paclin | bash
