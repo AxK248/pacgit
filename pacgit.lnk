@@ -1,2 +1,2 @@
 @echo off
-"%LocalAppData%\Programs\github-packages\pacgit\pacgit.bat" %*
+"%ProgramData%\github-packages\pacgit\pacgit.bat" %*
