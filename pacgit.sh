@@ -20,9 +20,9 @@ case "$action" in
     chmod +x /usr/local/bin/pacgit
     echo ${GREEN}Downloading and installing pacgit is completed${NO}
     echo If you want to use this package github manager enter pacgit command.
-    exit
+    exit 0
     ;;
     "N"|"No")
     ${RED}echo User canceled install.
-    exit
+    exit 1
     ;;
