@@ -1,16 +1,16 @@
 #!/bin/bash
-CYAN='\033[0;36m'
-GREEN='\033[0;32m'
-RED='\033[0;31m'
-NO='\033[0m'
-printf -n "%bpacgit package [? mb]%b\n" ${CYAN} ${NO}
+cyan='\033[0;36m'
+green='\033[0;32m'
+red='\033[0;31m'
+no='\033[0m'
+printf -n "%bpacgit package [? mb]%b\n" ${cyan} ${no}
 printf -n "Do you want to download this package? (Y/n): "
 read action
 
-action=$(echo "$action" | tr '[:upper:]' '[:lower:]')
+action=$(echo "$action" | tr -d '\r' | tr '[:upper:]' '[:lower:]')
 
 case "$action" in
-    "Y"|"Yes"|"")
+    "y"|"yes"|"")
     printf "%bPreparation...%b\n" ${cyan} ${no}
     sudo mkdir -p /opt/pacgit
     printf "%bDownloading package%b\n" ${cyan} ${no}
