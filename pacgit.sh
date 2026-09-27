@@ -23,6 +23,6 @@ case "$action" in
     exit 0
     ;;
     "N"|"No")
-    ${RED}echo User canceled install.
+    ${RED}echo User canceled install${NO}.
     exit 1
     ;;
