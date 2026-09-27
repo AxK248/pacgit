@@ -11,7 +11,7 @@ read action
 action=$(echo "$action" | tr -d '\r' | tr '[:upper:]' '[:lower:]')
 
 case "$action" in
-    "y"|"yes"|"")
+    "y"|"yes")
     printf "%bPreparation...%b\n" "${cyan}" "${no}"
     sudo mkdir -p /opt/pacgit
     printf "%bDownloading package%b\n" "${cyan}" "${no}"
