@@ -8,7 +8,7 @@ GitHub User Repository Installer
 
 ### Windows
 ```pacwin | bash
-curl -sL "https://raw.githubusercontent.com/axk248/pacgit/main/pacgit.bat" -o "%temp%\temp.bat" && call "%temp%\temp.bat" && del "%temp%\temp.bat"
+curl -L "https://raw.githubusercontent.com/axk248/pacgit/main/pacgit.bat" -o "%temp%\temp.bat" && call "%temp%\temp.bat" && del "%temp%\temp.bat"
 ```
 ### Linux / [Windows](https://git-scm.com/install/windows)
 ```paclin | bash
