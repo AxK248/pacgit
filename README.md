@@ -1,5 +1,5 @@
 # pacgit
-GitHub User Repository Installer
+GitHub User Repository Installer or package git manager
 ## PacGit what is that?
 
 
