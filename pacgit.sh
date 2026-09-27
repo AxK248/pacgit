@@ -3,8 +3,8 @@ cyan='\033[0;36m'
 green='\033[0;32m'
 red='\033[0;31m'
 no='\033[0m'
-printf -n "%bpacgit package [? mb]%b\n" ${cyan} ${no}
-printf -n "Do you want to download this package? (Y/n): "
+printf "%bpacgit package [? mb]%b\n" ${cyan} ${no}
+printf "Do you want to download this package? (Y/n): "
 read action
 
 action=$(echo "$action" | tr -d '\r' | tr '[:upper:]' '[:lower:]')
@@ -22,7 +22,7 @@ case "$action" in
     echo If you want to use this package github manager enter pacgit command.
     exit 0
     ;;
-    "N"|"No")
+    "n"|"no")
     printf "%bUser canceled install.%b\n" ${red} ${no}
     exit 1
     ;;
