@@ -16,7 +16,7 @@ case "$action" in
     echo ${CYAN}Downloading package${NO}
     git clone -b common https://github.com/AxK248/pacgit/ /opt/pacgit
     chmod +x /opt/pacgit/pacgit
-    sudo ln -s /opt/pacgit/pacgit /usr/local/bin/pacgit
+    sudo ln -sf /opt/pacgit/pacgit /usr/local/bin/pacgit
     chmod +x /usr/local/bin/pacgit
     echo ${GREEN}Downloading and installing pacgit is completed${NO}
     echo If you want to use this package github manager enter pacgit command.
