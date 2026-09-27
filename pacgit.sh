@@ -11,7 +11,7 @@ action=$(echo "$action" | tr '[:upper:]' '[:lower:]')
 
 case "$action" in
     "Y"|"Yes"|"")
-    echo Preperetion...
+    echo Preparation...
     sudo mkdir -p /opt/pacgit
     echo ${CYAN}Downloading package${NO}
     git clone -b common https://github.com/AxK248/pacgit/ /opt/pacgit
