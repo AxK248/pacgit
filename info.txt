@@ -1,3 +1,0 @@
-Name = GIThub PACkage mananger
-Version = 2.6
-Author = AxK248
