@@ -44,7 +44,7 @@ if [ "$OS" = "windows" ]; then
        exit 1
        ;;
        *)
-       echo -e "${red}Invalid choose $actionwin. Returning..."
+       echo -e "${red}Invalid choose $actionwin. Returning..." actionwin
     esac
 exit 0
 fi
