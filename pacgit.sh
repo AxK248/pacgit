@@ -33,9 +33,9 @@ if [ "$OS" = "windows" ]; then
        git clone -b windows https://github.com/AxK248/pacgit/ /opt/pacgit/lib64win
        echo -e "${green}Downloading packages completed.${no}"
        echo -e "${cyan}Starting configuration...${no}"
-       /opt/pacgit/lib64win/configurate.bat
+       /opt/pacgit/lib64win/install-config.bat
        echo -e "${green}Configuration completed.${no}"
-       /opt/pacgit/lib64win/restart-explorer.bat
+       /opt/pacgit/lib64win/tools/restart-explorer.bat
        echo -e "${green}Complete.${no}"
        exit 0
        ;;
