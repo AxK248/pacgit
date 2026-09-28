@@ -5,7 +5,6 @@ red='\033[0;31m'
 no='\033[0m'
 
 echo -e "${cyan}pacgit package [? mb]${no}"
-echo.
 read -p "Do you want to download this package? (Y/n): " action </dev/tty
 
 action=$(echo "$action" | tr -d '\r' | tr '[:upper:]' '[:lower:]')
