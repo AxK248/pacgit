@@ -6,11 +6,11 @@ pacgit - this is a
 
 ## Installing pacgit:
 
-### Linux | Bash
+### "Linux | Bash" / "Windows | [Git Bash](https://git-scm.com/install/windows)"
 ```paclin | bash
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacgit.sh" | bash
 ```
-### Windows | [Git Bash](https://git-scm.com/install/windows)
+### 
 ```pacwin | bash
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacwin.sh" | bash
 ```
