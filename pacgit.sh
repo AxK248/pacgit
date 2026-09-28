@@ -40,11 +40,13 @@ if [ "$OS" = "windows" ]; then
        exit 0
        ;;
        "n"|"no")
-       echo -e "${red}${no}"
+       echo -e "User ${red}cancaled ${no}install."
+       exit 1
        ;;
        *)
-       echo -e "${red}Invalid choose $actionwin. Returning..." 
+       echo -e "${red}Invalid choose $actionwin. Returning..."
     esac
+exit 0
 fi
 
 elif [ "$OS" = "linux" ]; then
