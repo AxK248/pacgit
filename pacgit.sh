@@ -16,14 +16,39 @@ case "$(uname -s)" in
         ;;
 esac
 
-# --- РАЗВЕТВЛЕНИЕ КОДА ---
-
 if [ "$OS" = "windows" ]; then
-:: Windows
-    echo -e
+#Windows
+    echo -e "${cyan}pacgit package [SIZE]${no}"
+    echo -e "${cyan}pacwin package for windows version pacgit${no}"
+    read -p "Do you want download this packages? (Y/n): " actionwin </dev/tty
 
-else
-:: Linux
+    actionwin=$(echo "$actionwin" | tr -d '\r' | tr '[:upper:]' '[:lower:]')
+
+    case "$actionwin" in
+       "y"|"yes")
+       echo -e "${cyan}Preparation...${no}"
+       mkdir -p /opt/pacgit
+       echo -e "${cyan}Downloading packages...${no}"
+       git clone -b common https://github.com/AxK248/pacgit/ /opt/pacgit
+       git clone -b windows https://github.com/AxK248/pacgit/ /opt/pacgit/lib64win
+       echo -e "${green}Downloading packages completed.${no}"
+       echo -e "${cyan}Starting configuration...${no}"
+       /opt/pacgit/lib64win/sudo.bat
+       echo -e "${green}Configuration completed.${no}"
+       /opt/pacgit/lib64win/restart-explorer.bat
+       echo -e "${green}Complete.${no}"
+       exit 0
+       ;;
+       "n"|"no")
+       echo -e "${red}${no}"
+       ;;
+       *)
+       echo -e "${red}Invalid choose $actionwin. Returning..." 
+    esac
+fi
+
+elif [ "$OS" = "linux" ]; then
+#Linux
     echo -e "${cyan}pacgit package [SIZE]${no}"
     read -p "Do you want to download this package? (Y/n): " action </dev/tty
 
@@ -35,7 +60,7 @@ else
         sudo mkdir -p /opt/pacgit
         echo -e "${cyan}Downloading package${no}"
         git clone -b common https://github.com/AxK248/pacgit/ /opt/pacgit
-        chmod +x /opt/pacgit/pacgit
+        chmod +x /opt/pacgit/pacgit.sh
         sudo ln -sf /opt/pacgit/pacgit /usr/local/bin/pacgit
         chmod +x /usr/local/bin/pacgit
         echo -e "${green}Downloading and installing pacgit is completed${no}"
@@ -43,12 +68,11 @@ else
         exit 0
         ;;
         "n"|"no")
-        echo -e "${cyan}User ${red}canceled ${cyan}install.${no}"
+        echo -e "User ${red}canceled ${no}install."
         exit 1
         ;;
         *)
-        echo -e "${red}Invalid choice. Exiting.${no}"
-        exit 1
+        echo -e "${red}Invalid choice $action. Returning...${no}" 
         ;;
     esac
 
