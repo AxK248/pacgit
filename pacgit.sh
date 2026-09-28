@@ -19,7 +19,7 @@ esac
 if [ "$OS" = "windows" ]; then
 #Windows
     echo -e "${cyan}pacgit package [SIZE]${no}"
-    echo -e "${cyan}pacwin package for windows version pacgit${no}"
+    echo -e "${cyan}pacwin package for windows version pacgit [SIZE]${no}"
     read -p "Do you want download this packages? (Y/n): " actionwin </dev/tty
 
     actionwin=$(echo "$actionwin" | tr -d '\r' | tr '[:upper:]' '[:lower:]')
