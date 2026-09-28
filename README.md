@@ -10,7 +10,7 @@ pacgit - this is a
 ```paclin | bash
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacgit.sh" | bash
 ```
-### Windows | [git bash](https://git-scm.com/install/windows)
+### Windows | [Git Bash](https://git-scm.com/install/windows)
 ```pacwin | bash
 curl -sL "https://raw.githubusercontent.com/AxK248/pacgit/main/pacwin.sh" | bash
 ```
