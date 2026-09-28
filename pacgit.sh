@@ -23,8 +23,6 @@ if [ "$OS" = "windows" ]; then
     echo -e
 
 else
-
-if [ "$OS" = "linux" ]; then
 :: Linux
     echo -e "${cyan}pacgit package [SIZE]${no}"
     read -p "Do you want to download this package? (Y/n): " action </dev/tty
