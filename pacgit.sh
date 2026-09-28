@@ -22,6 +22,8 @@ if [ "$OS" = "windows" ]; then
 :: Windows
     echo -e
 
+else
+
 if [ "$OS" = "linux" ]; then
 :: Linux
     echo -e "${cyan}pacgit package [SIZE]${no}"
