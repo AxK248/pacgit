@@ -33,7 +33,7 @@ if [ "$OS" = "windows" ]; then
        git clone -b windows https://github.com/AxK248/pacgit/ /opt/pacgit/lib64win
        echo -e "${green}Downloading packages completed.${no}"
        echo -e "${cyan}Starting configuration...${no}"
-       /opt/pacgit/lib64win/sudo.bat
+       /opt/pacgit/lib64win/configurate.bat
        echo -e "${green}Configuration completed.${no}"
        /opt/pacgit/lib64win/restart-explorer.bat
        echo -e "${green}Complete.${no}"
@@ -46,7 +46,7 @@ if [ "$OS" = "windows" ]; then
        *)
        echo -e "${red}Invalid choose $actionwin.${no}"
     esac
-exit 0
+exit 1
 fi
 
 elif [ "$OS" = "linux" ]; then
