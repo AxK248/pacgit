@@ -25,7 +25,7 @@ case "$action" in
     exit 0
     ;;
     "n"|"no")
-    printf "${red}User canceled install.${no}"
+    printf "${cyan}User ${red}canceled ${cyan}install.${no}"
     exit 1
     ;;
     *)
